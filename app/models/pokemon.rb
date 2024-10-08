@@ -1,4 +1,5 @@
 class Pokemon < ApplicationRecord
+  has_many :pokeballs
   has_many :trainers, through: :pokeballs
   validates :name, presence: true
   validates :element_type, presence: true

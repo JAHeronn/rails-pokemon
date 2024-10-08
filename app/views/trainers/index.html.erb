@@ -11,4 +11,6 @@
   <p>There are no Pokemons in the Pokedex</p>
 <% end %>
 
-<button class="trainer-button">New Trainer</button>
+<div id="new-trainer">
+  <%= link_to "New Trainer", new_trainer_path, class: "btn btn-primary" %>
+</div>

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "pokemons#index"
-  resources :pokemons, only: [:index, :show]
-  resources :trainers, only: [:index]
+  resources :pokemons, only: [:index, :show] do
+    resources :pokeballs, only: [:new, :create]
+  end
+  resources :pokeballs, only: :destroy
+  resources :trainers, only: [:index, :show, :new, :create]
 end
